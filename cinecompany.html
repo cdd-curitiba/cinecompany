@@ -347,14 +347,19 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top:70px; left:0; right:0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1.5rem 5%; gap:1rem; }
-    .hero-btns { flex-direction: column; }
-    .stats-row { gap: 1.5rem; }
+    .nav-cta { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top:70px; left:0; right:0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1.5rem 5%; gap:1rem; z-index: 999; }
+    .nav-links.open li:last-child { padding-bottom: .5rem; }
+    .nav-links.open::after { content: ''; display: block; padding-bottom: .5rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .hero-btns a { width: 100%; text-align: center; }
+    .stats-row { gap: 1.5rem; justify-content: center; }
     .contact-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     section { padding: 50px 5%; }
     .plans-grid { grid-template-columns: 1fr; }
     .values-grid { grid-template-columns: 1fr; }
+    .cards-grid { grid-template-columns: 1fr; }
   }
 
   /* Animations */
@@ -374,6 +379,7 @@
     <li><a href="#" onclick="showPage('faq')" id="nav-faq">Perguntas Frequentes</a></li>
     <li><a href="#" onclick="showPage('quemsomos')" id="nav-quemsomos">Quem Somos</a></li>
     <li><a href="#" onclick="showPage('contato')" id="nav-contato">Contato</a></li>
+    <li class="nav-cta-mobile"><a href="#" onclick="showPage('contato')" style="background:linear-gradient(135deg,#0099CC,#00C8E8);color:#000;font-weight:700;padding:.7rem 1.2rem;border-radius:6px;display:block;text-align:center;letter-spacing:.04em">Seja um Franqueado</a></li>
   </ul>
   <a class="nav-cta" href="#" onclick="showPage('contato')">Seja um Franqueado</a>
   <div class="hamburger" onclick="toggleMenu()">
